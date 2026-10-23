@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+  <!-- Risque de feu: a flame under SOPFEU's five danger levels, in front of a line of spruce. -->
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#2b3a55"/>
+      <stop offset="1" stop-color="#111a2b"/>
+    </linearGradient>
+    <linearGradient id="flame" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0" stop-color="#ffd54f"/>
+      <stop offset="0.55" stop-color="#ff9800"/>
+      <stop offset="1" stop-color="#e53935"/>
+    </linearGradient>
+    <clipPath id="tile"><rect width="256" height="256" rx="56"/></clipPath>
+  </defs>
+  <rect width="256" height="256" rx="56" fill="url(#sky)"/>
+  <!-- spruce line -->
+  <g clip-path="url(#tile)" fill="#0b1220">
+    <path d="M0 256 V214 L14 186 L28 214 L36 198 L50 222 L62 180 L78 220 L90 204 L102 228 L154 228 L166 204 L178 220 L194 180 L206 222 L220 198 L228 214 L242 186 L256 214 V256 Z"/>
+  </g>
+  <!-- danger levels, low to extreme -->
+  <g fill="none" stroke-width="22" stroke-linecap="butt">
+    <path d="M32.1 145.8 A96 96 0 0 1 47.9 97.0" stroke="#28398a"/>
+    <path d="M52.9 90.2 A96 96 0 0 1 94.4 60.1" stroke="#37a048"/>
+    <path d="M102.3 57.5 A96 96 0 0 1 153.7 57.5" stroke="#f4ed1f"/>
+    <path d="M161.6 60.1 A96 96 0 0 1 203.1 90.2" stroke="#ee7c22"/>
+    <path d="M208.1 97.0 A96 96 0 0 1 223.9 145.8" stroke="#c92127"/>
+  </g>
+  <!-- flame -->
+  <path transform="translate(128 66) scale(1.02)" d="M0 0 C10 22 34 34 34 62 C34 82 18 96 0 96 C-18 96 -34 82 -34 62 C-34 46 -24 36 -18 26 C-16 38 -10 44 -4 46 C-10 28 -8 12 0 0 Z" fill="url(#flame)" stroke="#ffffff" stroke-width="5" stroke-linejoin="round"/>
+</svg>

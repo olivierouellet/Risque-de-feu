@@ -1,0 +1,145 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Danger d’incendie de forêt au Québec",
+        "description": "Comment voulez-vous choisir l’endroit à suivre? Vous pourrez ajouter d’autres endroits plus tard (un chalet, par exemple).",
+        "menu_options": {
+          "location": "Géolocaliser : un point sur la carte (votre domicile au départ)",
+          "municipality": "Choisir une municipalité",
+          "zone": "Choisir une zone de danger d’incendie de la SOPFEU"
+        }
+      },
+      "location": {
+        "title": "Géolocaliser",
+        "description": "Déplacez le repère au besoin. La SOPFEU trouve la zone de danger d’incendie de ce point et les mesures préventives en vigueur à cet endroit.",
+        "data": {
+          "location": "Emplacement",
+          "threshold": "Alerte à partir de",
+          "fire_ban": "Alerte pendant une interdiction de feux"
+        },
+        "data_description": {
+          "threshold": "Le capteur Alerte s’allume quand le danger d’aujourd’hui atteint ce niveau. Servez-vous-en pour n’afficher une carte que lorsque le risque est réel.",
+          "fire_ban": "Allumer aussi le capteur Alerte pendant une interdiction de faire des feux à ciel ouvert, peu importe le danger."
+        }
+      },
+      "municipality": {
+        "title": "Municipalité",
+        "description": "Tapez pour chercher. La municipalité de votre domicile est déjà choisie. Une grande municipalité peut couvrir plusieurs zones : les capteurs montrent le danger le plus élevé.",
+        "data": {
+          "municipality": "Municipalité",
+          "threshold": "Alerte à partir de",
+          "fire_ban": "Alerte pendant une interdiction de feux"
+        },
+        "data_description": {
+          "threshold": "Le capteur Alerte s’allume quand le danger d’aujourd’hui atteint ce niveau. Servez-vous-en pour n’afficher une carte que lorsque le risque est réel.",
+          "fire_ban": "Allumer aussi le capteur Alerte pendant une interdiction de faire des feux à ciel ouvert, peu importe le danger."
+        }
+      },
+      "zone": {
+        "title": "Zone de danger d’incendie",
+        "description": "La SOPFEU divise le Québec en 64 zones de danger d’incendie. La zone de votre domicile est déjà choisie.",
+        "data": {
+          "zone": "Zone",
+          "threshold": "Alerte à partir de",
+          "fire_ban": "Alerte pendant une interdiction de feux"
+        },
+        "data_description": {
+          "threshold": "Le capteur Alerte s’allume quand le danger d’aujourd’hui atteint ce niveau. Servez-vous-en pour n’afficher une carte que lorsque le risque est réel.",
+          "fire_ban": "Allumer aussi le capteur Alerte pendant une interdiction de faire des feux à ciel ouvert, peu importe le danger."
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Impossible de joindre la SOPFEU. Réessayez plus tard.",
+      "outside_quebec": "Ce point n’est pas au Québec.",
+      "unknown_municipality": "Choisissez une municipalité dans la liste."
+    },
+    "abort": {
+      "already_configured": "Cet endroit est déjà suivi.",
+      "cannot_connect": "Impossible de joindre la SOPFEU. Réessayez plus tard."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Alerte de danger d’incendie",
+        "data": {
+          "threshold": "Alerte à partir de",
+          "fire_ban": "Alerte pendant une interdiction de feux"
+        },
+        "data_description": {
+          "threshold": "Le capteur Alerte s’allume quand le danger d’aujourd’hui atteint ce niveau. Servez-vous-en pour n’afficher une carte que lorsque le risque est réel.",
+          "fire_ban": "Allumer aussi le capteur Alerte pendant une interdiction de faire des feux à ciel ouvert, peu importe le danger."
+        }
+      }
+    }
+  },
+  "entity": {
+    "binary_sensor": {
+      "alert": {
+        "name": "Alerte"
+      },
+      "fire_ban": {
+        "name": "Interdiction de feux"
+      }
+    },
+    "sensor": {
+      "danger": {
+        "name": "Danger",
+        "state": {
+          "low": "Bas",
+          "moderate": "Modéré",
+          "high": "Élevé",
+          "very_high": "Très élevé",
+          "extreme": "Extrême"
+        },
+        "state_attributes": {
+          "level": {
+            "name": "Niveau"
+          }
+        }
+      },
+      "danger_tomorrow": {
+        "name": "Danger demain",
+        "state": {
+          "low": "Bas",
+          "moderate": "Modéré",
+          "high": "Élevé",
+          "very_high": "Très élevé",
+          "extreme": "Extrême"
+        },
+        "state_attributes": {
+          "level": {
+            "name": "Niveau"
+          }
+        }
+      },
+      "danger_day_after": {
+        "name": "Danger après-demain",
+        "state": {
+          "low": "Bas",
+          "moderate": "Modéré",
+          "high": "Élevé",
+          "very_high": "Très élevé",
+          "extreme": "Extrême"
+        },
+        "state_attributes": {
+          "level": {
+            "name": "Niveau"
+          }
+        }
+      }
+    }
+  },
+  "selector": {
+    "threshold": {
+      "options": {
+        "2": "Modéré",
+        "3": "Élevé",
+        "4": "Très élevé",
+        "5": "Extrême"
+      }
+    }
+  }
+}

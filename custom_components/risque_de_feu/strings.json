@@ -1,0 +1,145 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Forest fire danger in Québec",
+        "description": "How do you want to choose the place to follow? You can add other places later (a cottage, for example).",
+        "menu_options": {
+          "location": "Geolocate: a point on the map (your home to start with)",
+          "municipality": "Choose a municipality",
+          "zone": "Choose a SOPFEU fire danger zone"
+        }
+      },
+      "location": {
+        "title": "Geolocate",
+        "description": "Move the marker if needed. SOPFEU finds the fire danger zone of this point and the preventive measures in effect right there.",
+        "data": {
+          "location": "Location",
+          "threshold": "Alert from",
+          "fire_ban": "Alert during a fire ban"
+        },
+        "data_description": {
+          "threshold": "The Alert sensor turns on when today's danger reaches this level. Use it to show a card only when the risk is real.",
+          "fire_ban": "Also turn the Alert sensor on while an open-fire ban applies, whatever the danger."
+        }
+      },
+      "municipality": {
+        "title": "Municipality",
+        "description": "Type to search. Your home's municipality is preselected. A large municipality can span several zones: the sensors show the highest danger.",
+        "data": {
+          "municipality": "Municipality",
+          "threshold": "Alert from",
+          "fire_ban": "Alert during a fire ban"
+        },
+        "data_description": {
+          "threshold": "The Alert sensor turns on when today's danger reaches this level. Use it to show a card only when the risk is real.",
+          "fire_ban": "Also turn the Alert sensor on while an open-fire ban applies, whatever the danger."
+        }
+      },
+      "zone": {
+        "title": "Fire danger zone",
+        "description": "SOPFEU divides Québec into 64 fire danger zones. Your home's zone is preselected.",
+        "data": {
+          "zone": "Zone",
+          "threshold": "Alert from",
+          "fire_ban": "Alert during a fire ban"
+        },
+        "data_description": {
+          "threshold": "The Alert sensor turns on when today's danger reaches this level. Use it to show a card only when the risk is real.",
+          "fire_ban": "Also turn the Alert sensor on while an open-fire ban applies, whatever the danger."
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Could not reach SOPFEU. Try again later.",
+      "outside_quebec": "This point is not in Québec.",
+      "unknown_municipality": "Choose a municipality from the list."
+    },
+    "abort": {
+      "already_configured": "This place is already followed.",
+      "cannot_connect": "Could not reach SOPFEU. Try again later."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Fire danger alert",
+        "data": {
+          "threshold": "Alert from",
+          "fire_ban": "Alert during a fire ban"
+        },
+        "data_description": {
+          "threshold": "The Alert sensor turns on when today's danger reaches this level. Use it to show a card only when the risk is real.",
+          "fire_ban": "Also turn the Alert sensor on while an open-fire ban applies, whatever the danger."
+        }
+      }
+    }
+  },
+  "entity": {
+    "binary_sensor": {
+      "alert": {
+        "name": "Alert"
+      },
+      "fire_ban": {
+        "name": "Fire ban"
+      }
+    },
+    "sensor": {
+      "danger": {
+        "name": "Danger",
+        "state": {
+          "low": "Low",
+          "moderate": "Moderate",
+          "high": "High",
+          "very_high": "Very high",
+          "extreme": "Extreme"
+        },
+        "state_attributes": {
+          "level": {
+            "name": "Level"
+          }
+        }
+      },
+      "danger_tomorrow": {
+        "name": "Danger tomorrow",
+        "state": {
+          "low": "Low",
+          "moderate": "Moderate",
+          "high": "High",
+          "very_high": "Very high",
+          "extreme": "Extreme"
+        },
+        "state_attributes": {
+          "level": {
+            "name": "Level"
+          }
+        }
+      },
+      "danger_day_after": {
+        "name": "Danger day after tomorrow",
+        "state": {
+          "low": "Low",
+          "moderate": "Moderate",
+          "high": "High",
+          "very_high": "Very high",
+          "extreme": "Extreme"
+        },
+        "state_attributes": {
+          "level": {
+            "name": "Level"
+          }
+        }
+      }
+    }
+  },
+  "selector": {
+    "threshold": {
+      "options": {
+        "2": "Moderate",
+        "3": "High",
+        "4": "Very high",
+        "5": "Extreme"
+      }
+    }
+  }
+}

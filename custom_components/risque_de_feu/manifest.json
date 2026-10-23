@@ -1,0 +1,13 @@
+{
+  "domain": "risque_de_feu",
+  "name": "Risque de feu",
+  "codeowners": ["@olivierouellet"],
+  "config_flow": true,
+  "dependencies": [],
+  "documentation": "https://github.com/olivierouellet/Risque-de-feu",
+  "integration_type": "service",
+  "iot_class": "cloud_polling",
+  "issue_tracker": "https://github.com/olivierouellet/Risque-de-feu/issues",
+  "requirements": [],
+  "version": "0.1.0"
+}
