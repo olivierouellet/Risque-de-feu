@@ -1,0 +1,59 @@
+name: Bogue · Bug report
+description: Quelque chose ne fonctionne pas comme prévu. · Something doesn't work as expected.
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Écrivez en français ou en anglais. · Write in French or English.
+
+        Si le problème touche la sécurité, fermez ce formulaire et suivez plutôt
+        [SECURITY.md](https://github.com/olivierouellet/Risque-de-feu/blob/main/SECURITY.md).
+        · If the bug has a security side, close this and use SECURITY.md instead.
+
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: Ce qui s’est passé · What happened
+      description: Ce que vous avez fait, ce que vous avez vu, et ce que vous attendiez. · What you did, what you saw, and what you expected.
+    validations:
+      required: true
+
+  - type: dropdown
+    id: place
+    attributes:
+      label: Endroit choisi par · Place chosen by
+      options:
+        - Géolocalisation · Geolocation
+        - Municipalité · Municipality
+        - Zone SOPFEU · SOPFEU zone
+    validations:
+      required: false
+
+  - type: input
+    id: version
+    attributes:
+      label: Versions
+      description: Risque de feu et Home Assistant. · Risque de feu and Home Assistant.
+      placeholder: Risque de feu 0.1.0, Home Assistant 2026.10.1
+    validations:
+      required: true
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Journaux · Logs
+      description: >
+        Paramètres → Système → Journaux, filtrés sur « risque_de_feu ». ·
+        Settings → System → Logs, filtered on "risque_de_feu".
+      render: text
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Avant d’envoyer · Before submitting
+      options:
+        - label: Ce n’est pas un problème de sécurité. · This is not a security issue.
+          required: true

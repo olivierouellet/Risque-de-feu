@@ -1,0 +1,35 @@
+name: Tests
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  tests:
+    name: Lint and test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: astral-sh/setup-uv@v7
+        with:
+          python-version: "3.13"
+          activate-environment: true
+          # Home Assistant's test package installs its own uv into the venv, which then
+          # fails to prune the action's cache in the post-job step.
+          prune-cache: false
+
+      - name: Install dependencies
+        run: uv pip install -r requirements_test.txt
+
+      - name: Ruff
+        run: |
+          ruff check
+          ruff format --check
+
+      - name: Pytest
+        run: pytest

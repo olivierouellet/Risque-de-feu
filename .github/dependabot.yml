@@ -1,0 +1,11 @@
+# The integration has no Python requirements of its own; only the workflow actions move.
+version: 2
+updates:
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: monthly
+    commit-message:
+      prefix: "[Tooling]"
+    labels:
+      - dependencies

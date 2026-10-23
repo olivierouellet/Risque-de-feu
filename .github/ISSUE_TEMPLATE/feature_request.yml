@@ -1,0 +1,30 @@
+name: Suggestion · Feature request
+description: Quelque chose que Risque de feu devrait faire. · Something Risque de feu should do.
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: Écrivez en français ou en anglais. · Write in French or English.
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Le besoin · The problem
+      description: La situation, pas la solution. · The situation, not the solution.
+    validations:
+      required: true
+
+  - type: textarea
+    id: idea
+    attributes:
+      label: Votre idée · What you have in mind
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: offer
+    attributes:
+      label: Contribution
+      options:
+        - label: Je pourrais essayer de la réaliser. · I'd be willing to have a go at implementing this.
+          required: false
